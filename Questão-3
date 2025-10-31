@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor de Fundo</title>
+    <script src="https://kit.fontawesome.com/e9bd47593e.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: lightgray; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+        main {
+            text-align: center;
+        }
 
+        #mudar-cor {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <button id="mudar-cor"><i class="fa-solid fa-moon"></i></button>
+    </main>
+
+<script>
+    const cores = ['red', 'blue', 'green', 'orange', 'purple'];
+    const botao = document.getElementById('mudar-cor');
+
+    botao.addEventListener('click', function() {
+        const indiceAleatorio = Math.floor(Math.random() * cores.length); 
+        const corSelecionada = cores[indiceAleatorio];
+        document.body.style.backgroundColor = corSelecionada;
+    });
+</script>
+</body>
+</html>
